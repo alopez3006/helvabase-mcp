@@ -1,0 +1,9 @@
+{
+  "name": "helvabase-mcp-installer",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Generate client configuration for the hosted Helvabase MCP connector.",
+  "type": "module",
+  "bin": { "helvabase-mcp": "install.mjs" },
+  "engines": { "node": ">=20" }
+}
