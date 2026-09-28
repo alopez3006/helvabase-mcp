@@ -1,0 +1,18 @@
+Helvabase client plugins — licensing scope
+Publisher: Starbox Group Gmbh
+
+The MIT License in LICENSE applies only to the plugin manifests, connector
+configuration, skills and documentation distributed in this package. In the
+standalone distribution repository, it also covers the marketplace catalogues
+and distribution metadata.
+
+The Helvabase name, logos, icons and brand artwork (including all files under
+assets/ and shared/assets/) are excluded from the MIT grant. No trademark
+rights are granted. These brand materials remain the property of their
+respective rights holders. Their inclusion identifies the official Helvabase
+integration; it does not grant rights to reuse or redistribute the brand assets.
+
+The Helvabase application, backend, hosted services and customer data are not
+part of the licensed Software. This plugin license does not grant access to the
+hosted service or replace its subscription terms, privacy policy or access
+controls.

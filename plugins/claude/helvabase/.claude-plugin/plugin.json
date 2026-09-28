@@ -1,0 +1,11 @@
+{
+  "name": "helvabase",
+  "version": "1.4.3",
+  "description": "Pilot workflows for sourced Helvabase dossiers, reusable business sources and human review in Claude Cowork.",
+  "author": {
+    "name": "Starbox Group Gmbh",
+    "url": "https://helvabase.com"
+  },
+  "homepage": "https://helvabase.com/connect#claude",
+  "license": "MIT"
+}

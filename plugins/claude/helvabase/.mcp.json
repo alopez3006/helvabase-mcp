@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "helvabase-product": {
+      "type": "http",
+      "url": "https://helvabase.com/mcp"
+    }
+  }
+}

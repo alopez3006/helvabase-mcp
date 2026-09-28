@@ -1,0 +1,42 @@
+{
+  "name": "helvabase",
+  "version": "1.4.3",
+  "description": "Pilote pour préparer des dossiers sourcés et organiser leur revue dans Helvabase.",
+  "author": {
+    "name": "Starbox Group Gmbh",
+    "url": "https://helvabase.com"
+  },
+  "homepage": "https://helvabase.com",
+  "keywords": [
+    "dossiers",
+    "sources",
+    "review",
+    "rfp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Helvabase · pilote",
+    "shortDescription": "Dossiers sourcés, contributions et revue.",
+    "longDescription": "Relie votre assistant à vos espaces Helvabase autorisés. Préparez les réponses avec leurs sources, relevez les pièces manquantes et organisez la revue. Version pilote : les parcours natifs restent à valider.",
+    "developerName": "Starbox Group Gmbh",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://helvabase.com",
+    "privacyPolicyURL": "https://helvabase.com/privacy",
+    "termsOfServiceURL": "https://helvabase.com/terms",
+    "defaultPrompt": [
+      "Montre mes dossiers Helvabase et les prochaines étapes.",
+      "Prépare une réponse sourcée et relève les preuves manquantes.",
+      "Prépare la revue du dossier sans approuver à ma place."
+    ],
+    "brandColor": "#6D28D9",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "logoDark": "./assets/logo-dark.png"
+  },
+  "license": "MIT"
+}

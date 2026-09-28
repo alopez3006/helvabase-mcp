@@ -1,0 +1,13 @@
+{
+  "name": "helvabase",
+  "owner": {
+    "name": "Starbox Group Gmbh"
+  },
+  "plugins": [
+    {
+      "name": "helvabase",
+      "source": "./plugins/claude/helvabase",
+      "description": "Pilot workflows for sourced Helvabase dossiers and human review."
+    }
+  ]
+}

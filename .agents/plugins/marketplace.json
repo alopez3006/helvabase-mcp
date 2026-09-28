@@ -1,0 +1,20 @@
+{
+  "name": "helvabase",
+  "interface": {
+    "displayName": "Helvabase"
+  },
+  "plugins": [
+    {
+      "name": "helvabase",
+      "source": {
+        "source": "local",
+        "path": "./plugins/helvabase"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

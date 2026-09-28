@@ -1,0 +1,26 @@
+{
+  "version": "1.4.3",
+  "status": "prepared-not-published",
+  "archives": [
+    {
+      "client": "codex",
+      "path": "plugins/helvabase",
+      "archive": "helvabase-codex.zip",
+      "sha256": "b2c5bdb27ee712d6e106dfdb38e9b0b142ece8c49a8e9fb514e4a18e9c81f6ab"
+    },
+    {
+      "client": "claude",
+      "path": "plugins/claude/helvabase",
+      "archive": "helvabase-claude.zip",
+      "sha256": "a7db1afb07778364e530e6cb7563dce36ceb492ef59aba9570129ef1d3ae53f2"
+    }
+  ],
+  "publisher": "Starbox Group Gmbh",
+  "license": "MIT",
+  "licenseScope": "Plugin files only; brand assets excluded. See NOTICE.",
+  "nativeAcceptance": {
+    "codex": "not_yet_validated",
+    "chatgptWork": "not_yet_validated",
+    "claudeCowork": "not_yet_validated"
+  }
+}
