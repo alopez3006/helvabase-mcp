@@ -1,4 +1,4 @@
-# Install Helvabase — pilot 1.4.4
+# Install Helvabase — pilot 1.4.5
 
 [Français](./INSTALL.fr.md) · [English](./INSTALL.en.md) · [Deutsch](./INSTALL.de.md)
 
@@ -15,7 +15,7 @@ One method is enough. This plugin is not advertised as listed in the official di
 
 ## Claude Cowork: install, then connect
 
-1. Download `helvabase-claude.zip` version **1.4.4**. In Cowork, open **Customize → Plugins → Add → Upload plugin** and select the ZIP.
+1. Download `helvabase-claude.zip` version **1.4.5**. In Cowork, open **Customize → Plugins → Add → Upload plugin** and select the ZIP.
 2. In the plugin's **Connectors** tab, connect Helvabase. Reuse an existing product connection if offered. Follow the Helvabase sign-in flow and check the workspace and permissions before authorising.
 3. Start a new Cowork task and run the first check below.
 
@@ -23,7 +23,7 @@ Upload must be available in your Claude version and permitted by your organisati
 
 ## Codex: optional plugin with a configured catalogue
 
-1. Download `helvabase-codex.zip` version **1.4.4**, extract it into a folder named `helvabase`, and add that folder to your authorised personal or team catalogue.
+1. Download `helvabase-codex.zip` version **1.4.5**, extract it into a folder named `helvabase`, and add that folder to your authorised personal or team catalogue.
 2. In the client's plugins, select that catalogue and install Helvabase. The ZIP does not create a catalogue. Without an existing catalogue, prefer the direct connection above.
 3. Open a new chat, enable the plugin, then follow the Helvabase connection prompt and select the correct workspace.
 

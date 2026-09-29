@@ -1,4 +1,4 @@
-# Helvabase pour Claude Cowork — 1.4.4, pilote
+# Helvabase pour Claude Cowork — 1.4.5, pilote
 
 [Français](./README.md) · [English](./README.en.md) · [Deutsch](./README.de.md)
 
@@ -20,7 +20,7 @@ Cowork et aux plugins. Les politiques de votre organisation peuvent limiter
 l’installation. L’abonnement Claude reste distinct de celui d’Helvabase.
 
 1. Utilisez l’archive de cette version, `helvabase-claude.zip`. Vérifiez qu’elle
-   contient un seul plugin nommé `helvabase`, en version `1.4.4`, et les quatre
+   contient un seul plugin nommé `helvabase`, en version `1.4.5`, et les quatre
    skills annoncés ci-dessous. Ce paquet pilote n’est pas une inscription au
    répertoire officiel Anthropic.
 2. Dans Claude, ouvrez **Cowork**, puis **Customize / Personnaliser → Plugins →
@@ -76,7 +76,7 @@ accords humains restent contrôlés par Helvabase ; le plugin ne les remplace pa
 
 ## Mise à jour depuis 1.3.0
 
-Le nom reste `helvabase` et la version progresse de `1.3.0` à `1.4.4`. L’ancien
+Le nom reste `helvabase` et la version progresse de `1.3.0` à `1.4.5`. L’ancien
 paquet `integrations/helvabase/` et ses téléchargements restent intacts. Vérifiez
 les différences avant de remplacer votre copie installée. Évitez d’activer à la
 fois l’ancien pack et ce plugin, ou plusieurs connexions vers le même endpoint.
@@ -113,7 +113,7 @@ le manifeste. Aucun hook, exécutable, serveur local, fichier de configuration
 utilisateur ou secret n’entre dans ce paquet. Il ne s’agit pas d’une extension
 MCP locale `.mcpb` ou `.dxt`. [Structure officielle](https://claude.com/docs/plugins/build)
 
-Artefact prévu par l’intégration : `/plugins/1.4.4/helvabase-claude.zip`.
+Artefact prévu par l’intégration : `/plugins/1.4.5/helvabase-claude.zip`.
 Ce chemin prévu n’affirme ni sa publication ni sa disponibilité en production.
 
 ## Validation et limites de preuve
@@ -145,7 +145,7 @@ ces fichiers.
 
 ## Identité visuelle
 
-La version 1.4.4 adopte l’icône Helvabase aux angles arrondis, sans changer le texte du logo ni ses couleurs. L’icône et les variantes du logo pour fonds clairs et sombres sont incluses dans les deux plugins. Codex les référence dans ses métadonnées d’interface. Le manifeste Claude ne déclare pas de champ d’icône non documenté : l’affichage dans son catalogue dépend de la configuration de publication du catalogue.
+La version 1.4.5 adopte l’icône Helvabase aux angles arrondis, sans changer le texte du logo ni ses couleurs. L’icône et les variantes du logo pour fonds clairs et sombres sont incluses dans les deux plugins. Codex les référence dans ses métadonnées d’interface. Le manifeste Claude ne déclare pas de champ d’icône non documenté : l’affichage dans son catalogue dépend de la configuration de publication du catalogue.
 
 Éditeur : **Starbox Group Gmbh**. Les fichiers du plugin sont sous licence MIT ; le nom, les logos et les icônes Helvabase sont exclus. Voir `LICENSE` et `NOTICE`. Le backend et le service hébergé ne sont pas couverts.
 
