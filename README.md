@@ -43,5 +43,6 @@ against the deployed service.
 
 Only files under `public/mcp` are published from the private Helvabase
 repository. The source workflow syncs this directory after changes land on
-`main`. It requires the `MCP_PUBLICATION_TOKEN` secret with write access to
-`alopez3006/helvabase-mcp`.
+`main`. It uses a dedicated SSH deploy key with write access only to
+`alopez3006/helvabase-mcp`, stored as the source repository's
+`MCP_PUBLICATION_SSH_KEY` Actions secret. No personal GitHub token is required.
