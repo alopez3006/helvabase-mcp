@@ -1,18 +1,18 @@
 {
-  "version": "1.4.5",
+  "version": "1.4.7",
   "status": "prepared-not-published",
   "archives": [
     {
       "client": "codex",
       "path": "plugins/helvabase",
       "archive": "helvabase-codex.zip",
-      "sha256": "c74a53f610b83c87031785559b346f59205802cdf31618262fe883e5c4dd7570"
+      "sha256": "56d6aa872294ac6d221b2830088b82996e2ce06fbf5d233ad351b9a0456a09d7"
     },
     {
       "client": "claude",
       "path": "plugins/claude/helvabase",
       "archive": "helvabase-claude.zip",
-      "sha256": "b84d748c8dd79b756396bdf823ebb526f050c43bdbd950dc7dc718e0f0e039e1"
+      "sha256": "13bb2cf0361b4d06255c2b029c7b79d6d42d49f3dd2a0924f2b808b0e180fd44"
     }
   ],
   "publisher": "Starbox Group Gmbh",

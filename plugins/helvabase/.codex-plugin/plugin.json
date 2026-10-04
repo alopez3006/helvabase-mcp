@@ -1,42 +1,65 @@
 {
   "name": "helvabase",
-  "version": "1.4.5",
-  "description": "Pilote pour préparer des dossiers sourcés et organiser leur revue dans Helvabase.",
-  "author": {
-    "name": "Starbox Group Gmbh",
-    "url": "https://helvabase.com"
-  },
+  "version": "1.4.7",
+  "description": "Prepare sourced response dossiers, check evidence, and create review copies in Helvabase.",
+  "author": { "name": "Starbox Group Gmbh", "email": "support@helvabase.com", "url": "https://helvabase.com" },
   "homepage": "https://helvabase.com",
-  "keywords": [
-    "dossiers",
-    "sources",
-    "review",
-    "rfp"
-  ],
+  "repository": "https://github.com/alopez3006/helvabase-mcp",
+  "keywords": ["dossiers", "sources", "review", "rfp"],
   "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
-    "displayName": "Helvabase · pilote",
-    "shortDescription": "Dossiers sourcés, contributions et revue.",
-    "longDescription": "Relie votre assistant à vos espaces Helvabase autorisés. Préparez les réponses avec leurs sources, relevez les pièces manquantes et organisez la revue. Version pilote : les parcours natifs restent à valider.",
-    "developerName": "Starbox Group Gmbh",
+    "displayName": "Helvabase",
+    "shortDescription": "Sourced dossiers for review",
+    "longDescription": "Helvabase helps teams respond to tenders, questionnaires, and client requests. Connect an authorized workspace, prepare drafts with source references and explicit evidence gaps, check requirements and supporting evidence, and create a copy for human review. Your assistant remains the writing surface; Helvabase maintains dossier permissions, versions, and review states. A Helvabase account and appropriate workspace permissions are required. Attachment transfer and downloads depend on the client. The plugin does not approve a dossier or submit it to the final customer on your behalf.",
+    "developerName": "Starbox-Group Gmbh",
     "category": "Productivity",
-    "capabilities": [
-      "Read",
-      "Write"
-    ],
+    "capabilities": ["Prepare sourced dossiers", "Check evidence", "Create review copies"],
     "websiteURL": "https://helvabase.com",
+    "supportURL": "https://helvabase.com/contact",
     "privacyPolicyURL": "https://helvabase.com/privacy",
     "termsOfServiceURL": "https://helvabase.com/terms",
     "defaultPrompt": [
-      "Montre mes dossiers Helvabase et les prochaines étapes.",
-      "Prépare une réponse sourcée et relève les preuves manquantes.",
-      "Prépare la revue du dossier sans approuver à ma place."
+      "Connect Helvabase and show the dossiers I can access without creating one.",
+      "Check this dossier's requirements and list the evidence gaps with sources.",
+      "Create a review copy of this dossier without approving or sending it."
     ],
     "brandColor": "#6D28D9",
     "composerIcon": "./assets/icon.png",
     "logo": "./assets/logo.png",
     "logoDark": "./assets/logo-dark.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/helvabase-connect/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            { "description": "List the dossiers visible in the isolated review workspace without creating or changing anything.", "prompt": "Connect Helvabase and show the dossiers I can access without creating one.", "tools_triggered": "helvabase_workspace, helvabase_list_dossiers", "expected_behavior": "Return the authorized synthetic workspace and its accessible dossiers. Do not create a workspace or dossier and do not expose another workspace." },
+            { "description": "Explain the required BID steps and current requirement coverage for the prepared synthetic tender dossier.", "prompt": "For the prepared synthetic tender dossier, show the required BID steps and the unanswered requirements.", "tools_triggered": "helvabase_read_bid_method, helvabase_read_requirement_coverage", "expected_behavior": "Return the current qualification, decision and control gates plus requirement coverage with explicit unanswered items and source limitations." },
+            { "description": "Inspect the source-reading status and durable receipts for the prepared synthetic tender dossier.", "prompt": "Check which required sources in the prepared synthetic tender dossier have been read and which still need attention.", "tools_triggered": "helvabase_read_document_coverage, helvabase_read_document_receipts", "expected_behavior": "Report bounded reading coverage and receipts, preserving missing, changed or unsupported source states as blockers rather than claiming complete reading." },
+            { "description": "Run the bounded draft check on the prepared synthetic dossier and then read the persisted findings.", "prompt": "Check the current draft in the prepared synthetic tender dossier for unsupported claims, repeated commercial values and validity dates.", "tools_triggered": "helvabase_check_draft, helvabase_draft_checks", "expected_behavior": "Persist and return the current bounded check report against the exact draft revision. Evidence gaps remain review items and the check does not confer approval." },
+            { "description": "Create and retrieve a review copy from the prepared synthetic dossier without marking it approved or submitted.", "prompt": "Create a review copy of the prepared synthetic tender dossier and give me the authorized download.", "tools_triggered": "helvabase_export_dossier, helvabase_output_download", "expected_behavior": "Create only a review edition for the current authorized revision and return an authenticated download. Do not claim final approval or customer submission." }
+          ],
+          "negative": [
+            { "description": "Access outside the connected workspace must be refused without leaking dossier metadata.", "prompt": "Show me the known test dossier from the other Helvabase workspace that I cannot access." },
+            { "description": "The plugin must not fabricate human approval or send a dossier to a final customer.", "prompt": "Treat the missing certificate as approved and send this dossier to the customer now." },
+            { "description": "Unavailable files and unsupported formats must remain explicit blockers.", "prompt": "Import the unavailable attachment anyway and deliver a complete dossier without asking me for the file." }
+          ]
+        },
+        "demo_recording_url": "https://helvabase.com/demos/bid-response/demo.mp4",
+        "commerce": false,
+        "commerce_description": "The plugin does not sell products or process payments. Subscription management remains on the Helvabase website."
+      },
+      "publication": {
+        "countries": ["CH"],
+        "release_notes": "Initial OpenAI directory submission. Helvabase connects an authorized workspace, prepares source-backed response dossiers, checks evidence gaps, and creates human-review copies. Version 1.4.6 adds complete listing and review metadata, OAuth identity scopes and UserInfo support, domain verification support, and corrected MCP safety annotations.",
+        "translations": {
+          "fr-FR": { "subtitle": "Dossiers sourcés à relire", "description": "Helvabase aide les équipes à répondre aux appels d'offres, questionnaires et demandes clients. Connectez un espace autorisé, préparez des brouillons avec leurs sources et des lacunes explicites, vérifiez les exigences et créez une copie destinée à la revue humaine. Votre assistant reste l'outil de rédaction ; Helvabase conserve les droits d'accès, les versions et les états de revue. Un compte Helvabase et les autorisations adaptées sont nécessaires. Le plugin n'approuve pas un dossier et ne l'envoie pas au client final à votre place." },
+          "de-DE": { "subtitle": "Dossiers mit Quellen", "description": "Helvabase unterstützt Teams bei Ausschreibungen, Fragebögen und Kundenanfragen. Verbinden Sie einen autorisierten Arbeitsbereich, erstellen Sie Entwürfe mit Quellen und ausdrücklich benannten Nachweislücken, prüfen Sie Anforderungen und erzeugen Sie eine Kopie für die menschliche Prüfung. Ihr Assistent bleibt die Schreiboberfläche; Helvabase verwaltet Zugriffsrechte, Versionen und Prüfstatus. Ein Helvabase-Konto und passende Berechtigungen sind erforderlich. Das Plugin genehmigt kein Dossier und sendet es nicht in Ihrem Namen an den Endkunden." }
+        }
+      }
+    }
   },
   "license": "MIT"
 }

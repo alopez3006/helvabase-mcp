@@ -61,7 +61,38 @@ vivant et les sections/révisions exactes, avec faits non étayés explicites.
 Déclarer ensuite les passages réellement analysés, page par page, via
 `helvabase_record_document_analysis` contre cette analyse persistée ; un reçu de
 page ne suffit pas. Relire la couverture et la base courantes avant d’enregistrer
-`helvabase_submit_draft` avec les révisions résultantes. Ne pas fabriquer
+`helvabase_submit_draft` avec les révisions résultantes.
+
+Avant de rédiger, appeler `helvabase_read_answer_brief` et parcourir toutes les
+questions avec les mêmes révisions. Lire le libellé exact, les consignes, le type,
+la langue et les limites du formulaire. Les références de la question prouvent
+ce qui est demandé ; elles ne prouvent pas la conformité du répondant. Lire les
+preuves de l'entreprise dans le catalogue et les originaux requis.
+
+Rédiger dans le LLM du client une réponse directement utilisable pour chaque
+question. Synthétiser les preuves ; conserver approximations, périmètre,
+conditions et travaux en attente. Une citation brute ne suffit que si le formulaire
+la demande. Par exemple, un dossier indiquant une préparation SOC 2 à environ 98 %
+et un pen test externe en attente ne permet pas de déclarer une attestation obtenue
+ni 98 % de tests réussis. Ne pas transformer une information inconnue en « oui ».
+
+Soumettre `schemaVersion: helvabase.client_draft.v2`, avec toutes les sections de
+l'analyse. Chaque section contient `answers` ; chaque réponse fournit `id`,
+`target: {kind: requirement|field, id}`, `text`, `citationMarkers`, `coverage`
+(`answered`, `partial` ou `unanswered`) et `limitations`. Utiliser les identifiants
+retournés, jamais un libellé deviné. Inclure `dossierRevision` exactement pour les
+cibles de formulaire. Déclarer traduction et phrases non affirmatives au niveau
+de chaque réponse. Conserver un marqueur sur chaque phrase factuelle. La couverture
+déclarée par le client reste consultative ; toute limite non résolue reste visible.
+Le serveur assemble les réponses : ne pas fournir un second texte de section.
+
+Partager ensuite le lien de revue retourné : la question apparaît avec la réponse
+et ses preuves. Pour corriger, lire `helvabase_read_draft_review` et `helvabase_compare_draft_versions`, réconcilier les
+retours humains puis soumettre un brouillon v2 complet avec les révisions courantes.
+Les validations précédentes ne sont jamais reportées. Un brouillon v1 reste lisible ;
+sa conversion doit être une nouvelle version explicite, sans modification silencieuse.
+Pour les fiches collaboratives, reporter les valeurs retenues dans les champs puis
+réassembler avec `helvabase_assemble_contributions` et `answerFormat: questions` avant la livraison finale. Ne pas fabriquer
 prix, certification, date, citation, approbation ou preuve de compréhension.
 
 Inventorier les formulaires originaux et lire `helvabase_document_pack_capabilities`.
