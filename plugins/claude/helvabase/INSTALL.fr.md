@@ -1,4 +1,4 @@
-# Installer Helvabase — pilote 1.4.7
+# Installer Helvabase — pilote 1.4.8
 
 [Français](./INSTALL.fr.md) · [English](./INSTALL.en.md) · [Deutsch](./INSTALL.de.md)
 
@@ -15,7 +15,7 @@ Une seule méthode suffit. Le plugin n'est pas annoncé comme disponible dans le
 
 ## Claude Cowork : installer puis connecter
 
-1. Téléchargez `helvabase-claude.zip` version **1.4.7**. Dans Cowork, ouvrez **Customize / Personnaliser → Plugins → Add / Ajouter → Upload plugin / Importer un plugin**, puis sélectionnez le ZIP.
+1. Téléchargez `helvabase-claude.zip` version **1.4.8**. Dans Cowork, ouvrez **Customize / Personnaliser → Plugins → Add / Ajouter → Upload plugin / Importer un plugin**, puis sélectionnez le ZIP.
 2. Dans l'onglet **Connectors / Connecteurs** du plugin, connectez Helvabase. Réutilisez une connexion produit existante si proposée. Suivez la connexion Helvabase et vérifiez l'espace ainsi que les permissions avant d'autoriser.
 3. Commencez une nouvelle tâche Cowork et faites le premier essai ci-dessous.
 
@@ -23,7 +23,7 @@ L'import doit être disponible dans votre version de Claude et autorisé par vot
 
 ## Codex : plugin facultatif avec catalogue configuré
 
-1. Téléchargez `helvabase-codex.zip` version **1.4.7**, extrayez-le dans un dossier nommé `helvabase` et ajoutez ce dossier à votre catalogue personnel ou d'équipe autorisé.
+1. Téléchargez `helvabase-codex.zip` version **1.4.8**, extrayez-le dans un dossier nommé `helvabase` et ajoutez ce dossier à votre catalogue personnel ou d'équipe autorisé.
 2. Dans les plugins du client, choisissez ce catalogue et installez Helvabase. Le ZIP ne crée pas de catalogue. Sans catalogue existant, préférez la connexion directe ci-dessus.
 3. Ouvrez un nouveau chat, activez le plugin, puis suivez la connexion Helvabase proposée et choisissez le bon espace.
 
@@ -37,7 +37,7 @@ Vérifiez l'espace réellement retourné. Choisissez ensuite un dossier de test 
 
 ## Connexion, mise à jour et limites
 
-- Le connecteur produit est `helvabase-product`, à l'adresse `https://helvabase.com/mcp`. Aucun compte Snipara, clé API ou jeton à copier dans le chat n'est nécessaire. Ne remplacez pas un connecteur de contexte de développement.
+- Le connecteur produit est `helvabase-product`, à l'adresse `https://helvabase.com/mcp?catalog=core`. Aucun compte Snipara, clé API ou jeton à copier dans le chat n'est nécessaire. Ne remplacez pas un connecteur de contexte de développement.
 - L'installation ne transfère aucun document et ne donne aucun droit supplémentaire. Choisissez les fichiers et autorisez leur transfert ; vérifiez leur réception. Un lien ou des métadonnées ne prouvent pas qu'un fichier a été téléchargé et ouvert.
 - Désactivez les anciens skills du pack 1.3.0 si vous utilisez le plugin ; gardez une seule connexion produit. Ne copiez pas les skills en plus du plugin.
 - La relecture humaine, l'approbation finale et l'envoi au client restent distincts. Ne donnez pas à l'assistant un code de validation humaine pour qu'il approuve à votre place.
@@ -46,3 +46,21 @@ Vérifiez l'espace réellement retourné. Choisissez ensuite un dossier de test 
 - Retirer le plugin ne supprime pas vos dossiers et ne résilie pas votre abonnement. Révoquez la connexion séparément pour retirer son accès.
 
 Les paquets incluent l'icône arrondie et les logos Helvabase. Leur affichage dans le catalogue Claude dépend de sa configuration de publication. Aucun hook, exécutable ni secret n'est inclus. Les tailles et SHA-256 figurent dans `manifest.json` à côté des téléchargements.
+
+## Opérations spécialisées et mise à jour
+
+La version 1.4.8 utilise le catalogue agent à onze outils. L’assistant cherche
+avec `helvabase_help`, lit le contrat exact, puis appelle le point d’entrée
+`helvabase_execute_read` ou `helvabase_execute_write` retourné, avec les arguments
+originaux. Les droits et confirmations humaines restent requis. Le catalogue
+individuel complet reste à `https://helvabase.com/mcp` pour la revue.
+
+Mettez à jour le plugin existant dans votre client ou réimportez cette version,
+puis ouvrez un nouveau chat ou actualisez les outils. Le changement d’URL depuis
+l’ancien `/mcp` peut demander une nouvelle autorisation OAuth ; réutilisez le même
+compte et choisissez l’espace voulu. Ne copiez jamais de jeton et ne créez pas un
+autre espace pour réparer la connexion. Les lectures spécialisées Codex sont
+vérifiées ; ce paquet reste à valider dans Claude et les parcours complets de
+production et de transfert de fichiers restent des contrôles séparés.
+
+[Politique de confidentialité](https://helvabase.com/privacy)

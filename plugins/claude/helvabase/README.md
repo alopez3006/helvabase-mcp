@@ -1,4 +1,4 @@
-# Helvabase pour Claude Cowork — 1.4.7, pilote
+# Helvabase pour Claude Cowork — 1.4.8, pilote
 
 [Français](./README.md) · [English](./README.en.md) · [Deutsch](./README.de.md)
 
@@ -20,7 +20,7 @@ Cowork et aux plugins. Les politiques de votre organisation peuvent limiter
 l’installation. L’abonnement Claude reste distinct de celui d’Helvabase.
 
 1. Utilisez l’archive de cette version, `helvabase-claude.zip`. Vérifiez qu’elle
-   contient un seul plugin nommé `helvabase`, en version `1.4.7`, et les quatre
+   contient un seul plugin nommé `helvabase`, en version `1.4.8`, et les quatre
    skills annoncés ci-dessous. Ce paquet pilote n’est pas une inscription au
    répertoire officiel Anthropic.
 2. Dans Claude, ouvrez **Cowork**, puis **Customize / Personnaliser → Plugins →
@@ -29,7 +29,7 @@ l’installation. L’abonnement Claude reste distinct de celui d’Helvabase.
    est documenté par Claude ; sa présence effective dépend de votre client et
    des droits de votre organisation. [Installation officielle](https://claude.com/docs/plugins/overview#find-and-add-a-plugin)
 3. Ouvrez l’onglet **Connectors / Connecteurs** du plugin. Vérifiez que le serveur
-   `helvabase-product` pointe exactement vers `https://helvabase.com/mcp`.
+   `helvabase-product` pointe exactement vers `https://helvabase.com/mcp?catalog=core`.
    Si la connexion existe déjà, réutilisez-la. Sinon, ajoutez le connecteur puis
    connectez-le depuis cet onglet. Sur Team ou Enterprise, un propriétaire peut
    devoir l’ajouter avant votre connexion individuelle. [Connecteurs inclus](https://claude.com/docs/plugins/overview#bundled-connectors)
@@ -76,7 +76,7 @@ accords humains restent contrôlés par Helvabase ; le plugin ne les remplace pa
 
 ## Mise à jour depuis 1.3.0
 
-Le nom reste `helvabase` et la version progresse de `1.3.0` à `1.4.7`. L’ancien
+Le nom reste `helvabase` et la version progresse de `1.3.0` à `1.4.8`. L’ancien
 paquet `integrations/helvabase/` et ses téléchargements restent intacts. Vérifiez
 les différences avant de remplacer votre copie installée. Évitez d’activer à la
 fois l’ancien pack et ce plugin, ou plusieurs connexions vers le même endpoint.
@@ -113,7 +113,7 @@ le manifeste. Aucun hook, exécutable, serveur local, fichier de configuration
 utilisateur ou secret n’entre dans ce paquet. Il ne s’agit pas d’une extension
 MCP locale `.mcpb` ou `.dxt`. [Structure officielle](https://claude.com/docs/plugins/build)
 
-Artefact prévu par l’intégration : `/plugins/1.4.7/helvabase-claude.zip`.
+Artefact prévu par l’intégration : `/plugins/1.4.8/helvabase-claude.zip`.
 Ce chemin prévu n’affirme ni sa publication ni sa disponibilité en production.
 
 ## Validation et limites de preuve
@@ -150,3 +150,21 @@ La version 1.4.6 adopte l’icône Helvabase aux angles arrondis, sans changer l
 Éditeur : **Starbox Group Gmbh**. Les fichiers du plugin sont sous licence MIT ; le nom, les logos et les icônes Helvabase sont exclus. Voir `LICENSE` et `NOTICE`. Le backend et le service hébergé ne sont pas couverts.
 
 [Privacy](https://helvabase.com/privacy) · [Support](https://helvabase.com/contact) · [Terms](https://helvabase.com/terms) · [Documentation](https://helvabase.com/connect#claude)
+
+## Opérations spécialisées et mise à jour
+
+La version 1.4.8 utilise le catalogue agent à onze outils. L’assistant cherche
+avec `helvabase_help`, lit le contrat exact, puis appelle le point d’entrée
+`helvabase_execute_read` ou `helvabase_execute_write` retourné, avec les arguments
+originaux. Les droits et confirmations humaines restent requis. Le catalogue
+individuel complet reste à `https://helvabase.com/mcp` pour la revue.
+
+Mettez à jour le plugin existant dans votre client ou réimportez cette version,
+puis ouvrez un nouveau chat ou actualisez les outils. Le changement d’URL depuis
+l’ancien `/mcp` peut demander une nouvelle autorisation OAuth ; réutilisez le même
+compte et choisissez l’espace voulu. Ne copiez jamais de jeton et ne créez pas un
+autre espace pour réparer la connexion. Les lectures spécialisées Codex sont
+vérifiées ; ce paquet reste à valider dans Claude et les parcours complets de
+production et de transfert de fichiers restent des contrôles séparés.
+
+[Politique de confidentialité](https://helvabase.com/privacy)

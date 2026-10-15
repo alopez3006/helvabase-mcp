@@ -14,6 +14,19 @@ Add `https://github.com/alopez3006/helvabase-mcp` as a plugin marketplace in you
 
 Plugin files are MIT licensed. Brand assets and the hosted service are excluded; see [LICENSE](LICENSE) and [NOTICE](NOTICE).
 
+## Agent catalogue
+
+Plugin version 1.4.8 uses `https://helvabase.com/mcp?catalog=core`: eight essential
+operations, metadata help and scoped read/write specialist execution. The packaged
+skills describe discovery and exact-contract invocation. Update your existing
+plugin and refresh its tools; changing from the previous URL can require OAuth
+again. Keep the same authorized account and workspace.
+
+The complete individual catalogue remains at `https://helvabase.com/mcp`, including
+for review. No official directory acceptance is implied. Native Codex specialist
+reads have been verified; native Claude acceptance and full file workflows remain
+separate checks.
+
 ## Connector configuration fallback
 
 This repository is the public installation surface for the hosted Helvabase MCP

@@ -1,4 +1,4 @@
-# Helvabase installieren — Pilotversion 1.4.7
+# Helvabase installieren — Pilotversion 1.4.8
 
 [Français](./INSTALL.fr.md) · [English](./INSTALL.en.md) · [Deutsch](./INSTALL.de.md)
 
@@ -15,7 +15,7 @@ Eine Methode genügt. Dieses Plugin wird nicht als Eintrag in den offiziellen Ve
 
 ## Claude Cowork: installieren und verbinden
 
-1. Laden Sie `helvabase-claude.zip` in Version **1.4.7** herunter. Öffnen Sie in Cowork **Customize → Plugins → Add → Upload plugin** und wählen Sie das ZIP aus.
+1. Laden Sie `helvabase-claude.zip` in Version **1.4.8** herunter. Öffnen Sie in Cowork **Customize → Plugins → Add → Upload plugin** und wählen Sie das ZIP aus.
 2. Verbinden Sie Helvabase im Tab **Connectors** des Plugins. Verwenden Sie eine vorhandene Produktverbindung, falls angeboten. Folgen Sie der Helvabase-Anmeldung und prüfen Sie Arbeitsbereich und Berechtigungen vor der Freigabe.
 3. Starten Sie eine neue Cowork-Aufgabe und führen Sie die erste Prüfung unten durch.
 
@@ -23,7 +23,7 @@ Der Upload muss in Ihrer Claude-Version verfügbar und von Ihrer Organisation er
 
 ## Codex: optionales Plugin mit eingerichtetem Katalog
 
-1. Laden Sie `helvabase-codex.zip` in Version **1.4.7** herunter, entpacken Sie es in einen Ordner namens `helvabase` und fügen Sie diesen Ihrem zugelassenen persönlichen oder Team-Katalog hinzu.
+1. Laden Sie `helvabase-codex.zip` in Version **1.4.8** herunter, entpacken Sie es in einen Ordner namens `helvabase` und fügen Sie diesen Ihrem zugelassenen persönlichen oder Team-Katalog hinzu.
 2. Wählen Sie in der Plugin-Verwaltung des Clients diesen Katalog aus und installieren Sie Helvabase. Das ZIP erstellt keinen Katalog. Ohne vorhandenen Katalog ist die direkte Verbindung oben einfacher.
 3. Öffnen Sie einen neuen Chat, aktivieren Sie das Plugin und folgen Sie der Helvabase-Verbindung. Wählen Sie den richtigen Arbeitsbereich aus.
 
@@ -37,7 +37,7 @@ Prüfen Sie den tatsächlich zurückgegebenen Arbeitsbereich. Wählen Sie danach
 
 ## Verbindung, Aktualisierung und Grenzen
 
-- Der Produkt-Connector heisst `helvabase-product` und verwendet `https://helvabase.com/mcp`. Sie müssen weder ein Snipara-Konto anlegen noch API-Schlüssel oder Tokens in den Chat kopieren. Ersetzen Sie keinen Connector für Entwicklungskontext.
+- Der Produkt-Connector heisst `helvabase-product` und verwendet `https://helvabase.com/mcp?catalog=core`. Sie müssen weder ein Snipara-Konto anlegen noch API-Schlüssel oder Tokens in den Chat kopieren. Ersetzen Sie keinen Connector für Entwicklungskontext.
 - Die Installation überträgt keine Dokumente und gewährt keine zusätzlichen Zugriffsrechte. Wählen Sie Dateien aus, erlauben Sie deren Übertragung und prüfen Sie den Empfang. Ein Link oder Metadaten beweisen nicht, dass eine Datei heruntergeladen und geöffnet wurde.
 - Deaktivieren Sie alte Skills aus Paket 1.3.0, wenn Sie das Plugin nutzen. Behalten Sie nur eine Produktverbindung. Kopieren Sie die Skills nicht zusätzlich zum Plugin.
 - Menschliche Prüfung, endgültige Freigabe und Versand an den Kunden bleiben getrennte Schritte. Geben Sie dem Assistenten keinen menschlichen Bestätigungscode, damit er in Ihrem Namen freigibt.
@@ -46,3 +46,21 @@ Prüfen Sie den tatsächlich zurückgegebenen Arbeitsbereich. Wählen Sie danach
 - Das Entfernen des Plugins löscht keine Dossiers und kündigt kein Abonnement. Widerrufen Sie die Verbindung separat, um ihren Zugriff zu entfernen.
 
 Die Pakete enthalten das abgerundete Helvabase-Symbol und die Logos. Ihre Anzeige im Claude-Katalog hängt von dessen Veröffentlichungskonfiguration ab. Es sind keine Hooks, ausführbaren Programme oder Geheimnisse enthalten. Downloadgrössen und SHA-256-Prüfsummen stehen in `manifest.json` neben den Downloads.
+
+## Spezialoperationen und Aktualisierung
+
+Version 1.4.8 verwendet den Agentenkatalog mit elf Werkzeugen. Der Assistent sucht
+mit `helvabase_help`, liest den genauen Vertrag und ruft das zurückgegebene
+`helvabase_execute_read` oder `helvabase_execute_write` mit den Originalargumenten
+auf. Berechtigungen und menschliche Bestätigungen bleiben erforderlich. Der
+vollständige Einzelkatalog bleibt unter `https://helvabase.com/mcp` für die Prüfung.
+
+Aktualisieren Sie das vorhandene Plugin oder importieren Sie diese Version erneut.
+Starten Sie danach einen neuen Chat oder aktualisieren Sie die Werkzeuge. Beim
+Wechsel von der alten `/mcp`-URL kann eine erneute OAuth-Autorisierung nötig sein;
+verwenden Sie dasselbe Konto und wählen Sie den richtigen Arbeitsbereich. Kopieren
+Sie keine Tokens und erstellen Sie keinen Ersatz-Arbeitsbereich. Speziallesevorgänge
+wurden in Codex geprüft; dieses Paket ist in Claude noch nicht nativ validiert.
+Vollständige Dokument- und Dateiabläufe benötigen eigene Abnahmeprüfungen.
+
+[Datenschutzerklärung](https://helvabase.com/privacy)

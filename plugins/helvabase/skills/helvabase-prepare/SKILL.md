@@ -5,7 +5,36 @@ description: "Préparer ou reprendre un dossier Helvabase depuis des sources cho
 
 # Préparer le dossier sourcé
 
-Utiliser `helvabase-product` à `https://helvabase.com/mcp`, jamais le MCP de contexte
+## Appeler les opérations spécialisées
+
+Le mode `?catalog=core` expose onze outils : huit opérations essentielles,
+`helvabase_help`, `helvabase_execute_read` et `helvabase_execute_write`.
+Les noms métier employés dans ce workflow désignent les opérations du serveur ;
+ils ne supposent pas que le client charge un outil distinct pour chacune.
+
+Si l’opération n’est pas directement appelable, chercher avec
+`helvabase_help({query:"..."})`, puis demander son nom exact avec
+`helvabase_help({tool:"helvabase_nom_operation"})`. Lire `inputSchema`,
+`annotations`, `requiredScope` et `executionTool`. Appeler cet `executionTool`
+avec `{toolName:"helvabase_nom_operation",arguments:{...argumentsOriginaux}}`.
+Exemple de lecture sans modification : après son contrat exact,
+`helvabase_execute_read({toolName:"helvabase_document_pack_capabilities",arguments:{}})`.
+Pour une écriture, utiliser uniquement `helvabase_execute_write` si c’est le
+point d’appel retourné, dans le périmètre déjà autorisé par la demande.
+
+L’aide ne charge pas de liaison native et n’autorise aucune opération. Conserver
+les arguments exacts, clés d’idempotence, révisions et confirmations humaines de
+l’opération d’origine. Les points d’appel ont des annotations conservatrices ;
+respecter aussi les confirmations demandées par le client. Inspecter `isError`
+et `ok`, sans prendre un HTTP 200 pour un succès. Ne pas changer de compte,
+espace, transport ou clé pour contourner un refus. Ne jamais extraire OAuth.
+
+Un client exposant déjà le contrat individuel peut l’appeler directement.
+Le catalogue individuel complet reste à `https://helvabase.com/mcp`, notamment
+pour la revue ; ne pas modifier la connexion globale pour exécuter ce workflow.
+
+
+Utiliser `helvabase-product` à `https://helvabase.com/mcp?catalog=core`, jamais le MCP de contexte
 `api.snipara.com`. Lire les schémas réels via `tools/list` ou découverte équivalente.
 Si le connecteur manque, indiquer `https://helvabase.com/connect`. Ne demander ni
 extraire de secrets et ne modifier aucune configuration globale. Répondre dans la

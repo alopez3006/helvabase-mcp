@@ -3,7 +3,7 @@
   "mcpServers": {
     "helvabase-product": {
       "type": "streamable-http",
-      "url": "https://helvabase.com/mcp"
+      "url": "https://helvabase.com/mcp?catalog=core"
     }
   }
 }

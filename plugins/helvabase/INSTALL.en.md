@@ -1,4 +1,4 @@
-# Install Helvabase — pilot 1.4.7
+# Install Helvabase — pilot 1.4.8
 
 [Français](./INSTALL.fr.md) · [English](./INSTALL.en.md) · [Deutsch](./INSTALL.de.md)
 
@@ -15,7 +15,7 @@ One method is enough. This plugin is not advertised as listed in the official di
 
 ## Claude Cowork: install, then connect
 
-1. Download `helvabase-claude.zip` version **1.4.7**. In Cowork, open **Customize → Plugins → Add → Upload plugin** and select the ZIP.
+1. Download `helvabase-claude.zip` version **1.4.8**. In Cowork, open **Customize → Plugins → Add → Upload plugin** and select the ZIP.
 2. In the plugin's **Connectors** tab, connect Helvabase. Reuse an existing product connection if offered. Follow the Helvabase sign-in flow and check the workspace and permissions before authorising.
 3. Start a new Cowork task and run the first check below.
 
@@ -23,7 +23,7 @@ Upload must be available in your Claude version and permitted by your organisati
 
 ## Codex: optional plugin with a configured catalogue
 
-1. Download `helvabase-codex.zip` version **1.4.7**, extract it into a folder named `helvabase`, and add that folder to your authorised personal or team catalogue.
+1. Download `helvabase-codex.zip` version **1.4.8**, extract it into a folder named `helvabase`, and add that folder to your authorised personal or team catalogue.
 2. In the client's plugins, select that catalogue and install Helvabase. The ZIP does not create a catalogue. Without an existing catalogue, prefer the direct connection above.
 3. Open a new chat, enable the plugin, then follow the Helvabase connection prompt and select the correct workspace.
 
@@ -37,7 +37,7 @@ Check the workspace actually returned. Then choose a test dossier and synthetic 
 
 ## Connection, updates, and limits
 
-- The product connector is `helvabase-product`, at `https://helvabase.com/mcp`. No Snipara account, API key, or token needs to be copied into chat. Do not replace a development-context connector.
+- The product connector is `helvabase-product`, at `https://helvabase.com/mcp?catalog=core`. No Snipara account, API key, or token needs to be copied into chat. Do not replace a development-context connector.
 - Installation transfers no documents and grants no extra access. Choose files and authorise their transfer; check receipt. A link or metadata does not prove that a file was downloaded and opened.
 - Disable old skills from pack 1.3.0 when using the plugin; keep one product connection. Do not copy skills separately alongside the plugin.
 - Human review, final approval, and delivery to the customer remain separate steps. Do not give the assistant a human validation code to approve on your behalf.
@@ -46,3 +46,20 @@ Check the workspace actually returned. Then choose a test dossier and synthetic 
 - Removing the plugin does not delete your dossiers or cancel your subscription. Revoke the connection separately to remove its access.
 
 Packages include the rounded Helvabase icon and logos. Their display in Claude's catalogue depends on its publishing configuration. No hooks, executables, or secrets are included. Download sizes and SHA-256 hashes are listed in `manifest.json` alongside the downloads.
+
+## Specialist operations and updates
+
+Version 1.4.8 connects to the eleven-tool agent catalogue. The assistant searches
+with `helvabase_help`, reads the exact contract, then calls the returned
+`helvabase_execute_read` or `helvabase_execute_write` with the original arguments.
+Permissions and human confirmations remain required. The complete individual
+catalogue remains at `https://helvabase.com/mcp` for review.
+
+Update the existing plugin through your client or reimport this version, then
+start a new chat or refresh its tools. A URL change from the old `/mcp` connection
+may require OAuth again; reuse the same account and select the intended workspace.
+Never copy a token or create a second workspace to repair the connection.
+Codex specialist reads are verified; this package has not yet been validated in
+Claude, and complete document/file journeys remain separate acceptance checks.
+
+[Privacy policy](https://helvabase.com/privacy)

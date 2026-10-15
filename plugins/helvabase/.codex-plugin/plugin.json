@@ -1,6 +1,6 @@
 {
   "name": "helvabase",
-  "version": "1.4.7",
+  "version": "1.4.8",
   "description": "Prepare sourced response dossiers, check evidence, and create review copies in Helvabase.",
   "author": { "name": "Starbox Group Gmbh", "email": "support@helvabase.com", "url": "https://helvabase.com" },
   "homepage": "https://helvabase.com",
@@ -53,7 +53,7 @@
       },
       "publication": {
         "countries": ["CH"],
-        "release_notes": "Initial OpenAI directory submission. Helvabase connects an authorized workspace, prepares source-backed response dossiers, checks evidence gaps, and creates human-review copies. Version 1.4.6 adds complete listing and review metadata, OAuth identity scopes and UserInfo support, domain verification support, and corrected MCP safety annotations.",
+        "release_notes": "Version 1.4.8 uses the executable core catalogue: eight essential operations, metadata help and scoped read/write specialist dispatch. The assistant discovers each exact operation contract before execution; original permissions, revisions, idempotency and human confirmation remain required. The complete individual catalogue remains available separately for review. Native Codex specialist reads have been verified; Claude native acceptance and complete file roundtrips remain pending.",
         "translations": {
           "fr-FR": { "subtitle": "Dossiers sourcés à relire", "description": "Helvabase aide les équipes à répondre aux appels d'offres, questionnaires et demandes clients. Connectez un espace autorisé, préparez des brouillons avec leurs sources et des lacunes explicites, vérifiez les exigences et créez une copie destinée à la revue humaine. Votre assistant reste l'outil de rédaction ; Helvabase conserve les droits d'accès, les versions et les états de revue. Un compte Helvabase et les autorisations adaptées sont nécessaires. Le plugin n'approuve pas un dossier et ne l'envoie pas au client final à votre place." },
           "de-DE": { "subtitle": "Dossiers mit Quellen", "description": "Helvabase unterstützt Teams bei Ausschreibungen, Fragebögen und Kundenanfragen. Verbinden Sie einen autorisierten Arbeitsbereich, erstellen Sie Entwürfe mit Quellen und ausdrücklich benannten Nachweislücken, prüfen Sie Anforderungen und erzeugen Sie eine Kopie für die menschliche Prüfung. Ihr Assistent bleibt die Schreiboberfläche; Helvabase verwaltet Zugriffsrechte, Versionen und Prüfstatus. Ein Helvabase-Konto und passende Berechtigungen sind erforderlich. Das Plugin genehmigt kein Dossier und sendet es nicht in Ihrem Namen an den Endkunden." }
