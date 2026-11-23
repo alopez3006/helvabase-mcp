@@ -1,0 +1,43 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "com.helvabase/helvabase",
+  "title": "Helvabase — Governed response dossiers",
+  "description": "Connect your AI assistant to governed tender and RFP dossiers: sources, versions, decisions.",
+  "version": "1.0.1",
+  "websiteUrl": "https://helvabase.com",
+  "repository": {
+    "url": "https://github.com/alopez3006/helvabase-mcp",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://helvabase.com/brand/helvabase-app-icon-192.png",
+      "mimeType": "image/png",
+      "sizes": ["192x192"]
+    },
+    {
+      "src": "https://helvabase.com/brand/helvabase-app-icon-512.png",
+      "mimeType": "image/png",
+      "sizes": ["512x512"]
+    },
+    {
+      "src": "https://helvabase.com/brand/helvabase-icon.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": ["any"]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://helvabase.com/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "Helvabase account authorization (OAuth via the connect flow).",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
